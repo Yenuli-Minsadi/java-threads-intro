@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Counts counts = new Counts();
         Thread t1 = new Thread(() -> {
-            for (int i = 0; i<=1000; i++) {
+            for (int i = 0; i<1000; i++) {
                     counts.incrementValue();
 //                try {
 //                    Thread.sleep(1000);
@@ -17,7 +17,7 @@ public class Main {
         });
 
         Thread t2 = new Thread(() -> {
-            for (int i = 0; i<=1000; i++) {
+            for (int i = 0; i<1000; i++) {
                 counts.incrementValue();
 //                try {
 //                    Thread.sleep(1000);
@@ -38,7 +38,7 @@ public class Main {
 
 class Counts {
     private int count = 0;
-    public void incrementValue() {
+    public synchronized void incrementValue() {
         count++;
     }
 
@@ -46,3 +46,6 @@ class Counts {
         return count;
     }
 }
+// race condition - unpredictable results
+// data inconsistency
+// deadlock - infinite loop
