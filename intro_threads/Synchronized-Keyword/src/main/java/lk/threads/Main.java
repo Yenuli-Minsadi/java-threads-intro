@@ -38,7 +38,7 @@ public class Main {
 
 class Counts {
     private int count = 0;
-    public synchronized void incrementValue() {
+    public void incrementValue() {
         count++;
     }
 
