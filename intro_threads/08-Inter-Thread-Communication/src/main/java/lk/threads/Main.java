@@ -68,7 +68,9 @@ class Count  {
         System.out.println("PUT: "+ num);
         this.num=num;
         flag=true;
-        notify();
+        notify();//notify only one thread waiting on this object
+        //notifyAll(); notify all threads waiting on this object
+
     }
     public synchronized void get(){
 
