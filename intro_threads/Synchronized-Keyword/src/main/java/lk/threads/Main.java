@@ -32,8 +32,6 @@ public class Main {
         t2.join();
         System.out.println(counts.getCount());
     }
-
-
 }
 
 class Counts {
