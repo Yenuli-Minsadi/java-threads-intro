@@ -48,4 +48,4 @@ class Counts {
 }
 // race condition - unpredictable results
 // data inconsistency
-// deadlock - infinite loop
+// deadlock - infinite loop (ex: t1 is waiting for t2 and t2 waiting for t1)
